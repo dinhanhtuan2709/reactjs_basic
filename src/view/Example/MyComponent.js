@@ -16,6 +16,9 @@ class MyComponent extends React.Component{
             Name: event.target.value
         })
     }
+    handdleButton = () =>{
+        alert('Operation is Excute')
+    }
     render(){
         return(
             <>
@@ -28,8 +31,12 @@ class MyComponent extends React.Component{
                     <input value={this.state.Age} type='text' onChange={(event) => this.ChangAge(event)}/>
                         This year, I'm {this.state.Age} years old
                     </div>
+                <div className='btn-click'>
+                    <button onClick={this.handdleButton}>
+                        Click here
+                    </button>
+                </div>
                 
-                <div>Hello my Component by D.A.T ^.^</div>
             </>
         )
     }
