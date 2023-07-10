@@ -1,43 +1,34 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
+import AddComponent from './AddComponent';
 
 class MyComponent extends React.Component{
 
     state = {
-      firstName : "",
-      lastName : ""
+      Development: [
+        {id: 1, name:'Nhung', position: 'Tester', salary: 400},
+        {id: 2, name:'Hao', position: 'Tester', salary: 600}
+      ]
     }
-    handdleFirstName = (event) => {
+
+    addnewDevelopment = (delt) => {
         this.setState({
-             firstName: event.target.value
+            Development: [...this.state.Development, delt]
         })
     }
-    handdleLastName = (event) => {
-        this.setState({
-             lastName: event.target.value
-        })
-    }
-    handdleSubmit = (event) => {
-        event.preventDefault()
-        console.log('>>>>>> My data : ', this.state)
-    }
+    
 
     render(){
         return(
             <>
-        <form>
-            <label>First name: {this.state.firstName}</label><br/>
-            <input type="text"
-                value={this.state.firstName}
-                onChange={(event) => this.handdleFirstName(event)} /><br/>
-
-            <label>Last name:{this.state.lastName}</label><br/>
-            <input type="text" 
-                value={this.state.lastName}
-                onChange={(event) => this.handdleLastName(event)}/><br/>
-            <input type="submit"
-                onClick = {(event) => this.handdleSubmit(event)}
-            />
-        </form> 
+       
+               <ChildComponent 
+                    development = {this.state.Development} 
+               />
+               
+               <AddComponent
+               addnewDevelopment = {this.addnewDevelopment}
+               />
                
             </>
         )
