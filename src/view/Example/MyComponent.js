@@ -17,6 +17,13 @@ class MyComponent extends React.Component{
         })
     }
     
+    deleteDev = (delt) =>{
+        let currentDev = this.state.Development;
+        currentDev = currentDev.filter(item => item.id !== delt.id);
+        this.setState({
+            Development: currentDev
+        })
+    }
 
     render(){
         return(
@@ -24,10 +31,12 @@ class MyComponent extends React.Component{
        
                <ChildComponent 
                     development = {this.state.Development} 
+                    deleteDev = {this.deleteDev}
                />
                
                <AddComponent
                addnewDevelopment = {this.addnewDevelopment}
+               
                />
                
             </>

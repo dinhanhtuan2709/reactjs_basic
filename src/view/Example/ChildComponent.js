@@ -10,6 +10,9 @@ class ChildComponent extends React.Component {
             showJob : !this.state.showJob
         })
     }
+    handdleOnClickDetele = (delpt) =>{
+        this.props.deleteDev(delpt)
+    }
 
     render(){
          let{development} = this.props;
@@ -28,7 +31,11 @@ class ChildComponent extends React.Component {
                     {
                         development.map((item, index) => {
                             return(
-                                <div key={item.id}>{item.id} - {item.name} - {item.position} - {item.salary}</div>
+                                <div key={item.id}> {item.id} - {item.name} - {item.position} - {item.salary}
+                                <></>
+                                    <span onClick={() => this.handdleOnClickDetele(item)}> x </span>
+                                </div>
+                                
                             )
                         })
                     }
