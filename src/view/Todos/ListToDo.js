@@ -71,6 +71,10 @@ class ListTodo extends React.Component{
         let { listTodo, editTodo } = this.state;
         let isEmptyObj = Object.keys(editTodo).length === 0;
         return (
+            <>
+                <p className='title'>
+                    <b>Simple List App Todo with D.A.T ^.^</b>
+                </p>
             <div className="list-todo-container">
 
                 <AddTodo
@@ -108,6 +112,8 @@ class ListTodo extends React.Component{
                     
                 </div>
              </div>
+            </>
+            
         )
     }
 

@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.scss';
-// import MyComponent from './Example/MyComponent';
+import Nav from './Nav/nav';
+import MyComponent from './Example/MyComponent';
 import ListTodo from './Todos/ListToDo';
+import Home from './Example/Home';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+import { BrowserRouter, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   return (
-    <div className="App">
-      
+    <BrowserRouter>
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Simple List App Todo with D.A.T ^.^
-        </p>
-        {/* <MyComponent /> */}
-        <ListTodo/>
-      </header>
+         <Nav/>
+          <img src={logo} className="App-logo" alt="logo" />
+          
+          <Switch>
+            <Route path="/" exact> <Home /> </Route>
+            <Route path='/todos'> <ListTodo/> </Route>
+            <Route path='/lists'> <MyComponent /> </Route>
+          </Switch>
 
+      </header>
       <ToastContainer
       position="top-right"
       autoClose={5000}
@@ -30,9 +41,11 @@ function App() {
       pauseOnHover
       theme="light"
       />
-{/* Same as */}
-<ToastContainer />
+    {/* Same as */}
+      <ToastContainer />
     </div>
+    </BrowserRouter>
+    
   );
 }
 
