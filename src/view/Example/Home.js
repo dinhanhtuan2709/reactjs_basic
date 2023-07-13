@@ -3,7 +3,7 @@ import React from "react";
 class Home extends React.Component{
     render() {
         return (
-            <div>Hello Home</div> 
+            <div>Hello Home</div>
         )
     }
 }
