@@ -9,6 +9,7 @@ import Nav from './Nav/nav';
 import MyComponent from './Example/MyComponent';
 import ListTodo from './Todos/ListToDo';
 import Home from './Example/Home';
+import ListUser from './Users/ListUser';
 
 import {
   createBrowserRouter,
@@ -29,7 +30,8 @@ function App() {
           <Switch>
             <Route path='/' exact> <Home/> </Route>
             <Route path='/todos'> <ListTodo/> </Route>
-            <Route path='/lists'> <MyComponent/> </Route>
+            <Route path='/lists'> <MyComponent /> </Route>
+             <Route path='/user'> <ListUser/> </Route>
           </Switch>
 
       </header>

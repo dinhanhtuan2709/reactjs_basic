@@ -12,6 +12,7 @@ class AddComponent extends React.Component{
              name: event.target.value
         })
     }
+    
     handdleposition = (event) => {
         this.setState({
              position: event.target.value
@@ -46,17 +47,17 @@ class AddComponent extends React.Component{
     render(){
         return(
              <form>
-                <label>Name: {this.state.name}</label><br/>
+                <label style={{color:"#fd5203"}}>Name: {this.state.name}</label><br/>
                 <input type="text"
                     value={this.state.name}
                     onChange={(event) => this.handdlename(event)} /><br/>
 
-                <label>Position: {this.state.position}</label><br/>
+                <label style={{color:"#fd5203"}}>Position: {this.state.position}</label><br/>
                 <input type="text"
                     value={this.state.position}
                     onChange={(event) => this.handdleposition(event)} /><br/>
 
-                <label>Salary: {this.state.salary}</label><br/>
+                <label style={{color:"#fd5203"}}>Salary: {this.state.salary}</label><br/>
                 <input type="text"
                     value={this.state.salary}
                     onChange={(event) => this.handdlesalary(event)}/><br/>
