@@ -10,6 +10,7 @@ import MyComponent from './Example/MyComponent';
 import ListTodo from './Todos/ListToDo';
 import Home from './Example/Home';
 import ListUser from './Users/ListUser';
+import DetailUser from './Users/DetailUser';
 
 import {
   createBrowserRouter,
@@ -31,7 +32,8 @@ function App() {
             <Route path='/' exact> <Home/> </Route>
             <Route path='/todos'> <ListTodo/> </Route>
             <Route path='/lists'> <MyComponent /> </Route>
-             <Route path='/user'> <ListUser/> </Route>
+            <Route path='/user' exact> <ListUser /> </Route>
+            <Route path='/user/:id'> <DetailUser/> </Route>
           </Switch>
 
       </header>

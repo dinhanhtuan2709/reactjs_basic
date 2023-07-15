@@ -33,7 +33,7 @@ class ChildComponent extends React.Component {
                             return(
                                 <div key={item.id}> {item.id} - {item.name} - {item.position} - {item.salary}
                                 <></>
-                                    <span onClick={() => this.handdleOnClickDetele(item)}> x </span>
+                                    <span onClick={() => this.handdleOnClickDetele(item)}> (x) </span>
                                 </div>
                                 
                             )
